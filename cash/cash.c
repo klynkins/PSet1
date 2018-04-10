@@ -1,6 +1,16 @@
 #include <cs50.h>
 #include <stdio.h>
 
+/*tips
+i. run style50 - a few things here would have been caught by it
+ii. a comment or two to explain why a certain line of code is helpful,
+esp when you are debugging an issue
+
+good
+use of spacing
+solution is clear and easy to understand
+*/
+
 int main(void)
 {
     float n;
@@ -13,8 +23,11 @@ int main(void)
     }
     while (n < 0);
 
+    // a comment explaining why you * by 100 would be good here
     change = n * 100;
     coin =0;
+    /* would have been caught by style50
+    would have been coin = 0 */
 
     while(change >= 25)
     {
@@ -40,6 +53,11 @@ int main(void)
         coin++;
         change = change - 1;
     }
+    // why add change here..
+    // base on the logic of your last while
+    // statement you don't need to add change
+    // should terminate when change = 0
+    // Makes the dev wonder why you are adding this value
 
     printf("%d\n", coin + change);
 }
